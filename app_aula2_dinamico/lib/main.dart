@@ -39,13 +39,15 @@ class ContadorState extends State<Contador> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          color: Colors.blue,
-          height: 150,
-          width: 150,
-           // Child estabelece relação entre o container e o texto
-         child: Text("${cont}",
-         style: TextStyle(fontSize: 30),),
+        Center(
+          child: Container(
+            color: Colors.blue,
+            height: 150,
+            width: 150,
+             // Child estabelece relação entre o container e o texto
+           child: Text("${cont}",
+           style: TextStyle(fontSize: 30),textAlign: TextAlign.center),
+          ),
         ),
         ElevatedButton(onPressed: (){
           setState(() {
@@ -53,6 +55,11 @@ class ContadorState extends State<Contador> {
           });
         }, 
         child: Text("Contador")),
+        ElevatedButton(onPressed: (){
+          setState(() {
+            cont =0;
+          });
+        }, child: Text("Zerar")),
       ],
     );
   }
